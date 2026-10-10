@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ember &amp; Pepper</title>
+    <meta name="description"
+      content="Party jollof, suya, asun and pepper soup, cooked to order in Yaba, Lagos. Build your order and send it on WhatsApp."/>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=DM+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip" href="#menu">Skip to the menu</a>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Ember &amp; Pepper, home">Ember &amp; Pepper</a>
+      <nav aria-label="Main">
+        <a href="#menu">Menu</a>
+        <a href="#visit">Visit</a>
+        <button
+          class="btn fbtn-small"
+          id="open-order"
+          type="button"
+          aria-haspopup="dialog">
+          Order
+        </button>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="status" id="status" aria-live="polite">
+            Checking the grill
+          </p>
+          <h1>
+            <span class="line">Smoke, pepper</span>
+            <span class="line">and rice, cooked</span>
+            <span class="line">to order.</span>
+          </h1>
+          <p class="lead">
+            A Lagos grill house on Adeniyi Street, Yaba. Pick your dishes, send
+            the order on WhatsApp, and we start the fire.
+          </p>
+          <div class="hero-actions">
+            <a class="btn" href="#menu">Order now</a>
+            <a class="btn btn-ghost" href="#visit">Opening hours</a>
+          </div>
+        </div>
+
+        <div class="hero-side">
+          <figure class="hero-photo" data-optional>
+            <img
+              src="images/hero.jpg"
+              alt="Suya skewers and party jollof served on the grill table"
+              width="900"
+              height="1000"
+              fetchpriority="high"/>
+          </figure>
+          <aside class="board" aria-label="Favourites this week">
+            <h2>Favourite this week</h2>
+            <ul>
+              <li>
+                <span class="b-name">Party jollof and chicken</span>
+                <span class="leader" aria-hidden="true"></span>
+                <span class="b-price">&#8358;4,500</span>
+              </li>
+              <li>
+                <span class="b-name">Beef suya platter</span>
+                <span class="leader" aria-hidden="true"></span>
+                <span class="b-price">&#8358;5,000</span>
+              </li>
+              <li>
+                <span class="b-name">Asun</span>
+                <span class="leader" aria-hidden="true"></span>
+                <span class="b-price">&#8358;4,500</span>
+              </li>
+              <li>
+                <span class="b-name">Goat pepper soup</span>
+                <span class="leader" aria-hidden="true"></span>
+                <span class="b-price">&#8358;4,000</span>
+              </li>
+            </ul>
+            <p class="board-note">
+              Every plate is made fresh within 20 to 30 minutes.
+            </p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="menu-section" id="menu" aria-labelledby="menu-title">
+        <div class="wrap">
+          <h2 id="menu-title">The menu</h2>
+          <p class="menu-hint">Tap Add on any dish to start your order.</p>
+          <div class="tabs" id="tabs" role="group" aria-label="Filter the menu"></div>
+          <ul class="menu-list" id="menu-list">
+            <li class="menu-item" data-id="party-jollof" data-cat="Rice" data-name="Party jollof and chicken" data-price="4500">
+              <img class="m-thumb" src="images/party-jollof.jpg" alt="" width="88" height="88">
+              <div class="m-info"><h3>Party jollof and chicken</h3><p>Smoky jollof with a grilled chicken thigh and fried plantain.</p></div>
+              <span class="leader" aria-hidden="true"></span>
+              <span class="m-price">₦4,500</span>
+              <div class="m-action"><button class="btn btn-add" type="button" aria-label="Add Party jollof and chicken to your order">Add</button></div>
+            </li>
+
+            <li class="menu-item" data-id="ofada" data-cat="Rice" data-name="Ofada rice and ayamase" data-price="4800">
+              <img class="m-thumb" src="images/ofada.jpg" alt="" width="88" height="88">
+              <div class="m-info"><h3>Ofada rice and ayamase</h3><p>Local rice with green pepper stew, assorted meat and egg.</p></div>
+              <span class="leader" aria-hidden="true"></span>
+              <span class="m-price">₦4,800</span>
+              <div class="m-action"><button class="btn btn-add" type="button" aria-label="Add Ofada rice and ayamase to your order">Add</button></div>
+            </li>
+
+            <li class="menu-item" data-id="fried-rice" data-cat="Rice" data-name="Fried rice and turkey" data-price="5200">
+              <img class="m-thumb" src="images/fried-rice.jpg" alt="" width="88" height="88">
+              <div class="m-info"><h3>Fried rice and turkey</h3><p>Rice with mixed vegetable and grilled turkey wing.</p></div>
+              <span class="leader" aria-hidden="true"></span>
+              <span class="m-price">₦5,200</span>
+              <div class="m-action"><button class="btn btn-add" type="button" aria-label="Add Fried rice and turkey to your order">Add</button></div>
+            </li>
+
+            <li class="menu-item" data-id="suya" data-cat="Grill" data-name="Beef suya platter" data-price="5000">
+              <img class="m-thumb" src="images/suya.jpg" alt="" width="88" height="88">
+              <div class="m-info"><h3>Beef suya platter</h3><p>Thin sliced beef rubbed in yaji, wit onions, tomato and cabbage.</p></div>
+              <span class="leader" aria-hidden="true"></span>
+              <span class="m-price">₦5,000</span>
+              <div class="m-action"><button class="btn btn-add" type="button" aria-label="Add Beef suya platter to your order">Add</button></div>
+            </li>
+
+            <li class="menu-item" data-id="asun" data-cat="Grill" data-name="Asun" data-price="4500">
+              <img class="m-thumb" src="images/asun.jpg" alt="" width="88" height="88">
+              <div class="m-info"><h3>Asun</h3><p>Grilled goat in a hot scotch bonnet and onion pepper sauce.</p></div>
+              <span class="leader" aria-hidden="true"></span>
+              <span class="m-price">₦4,500</span>
+              <div class="m-action"><button class="btn btn-add" type="button" aria-label="Add Asun to your order">Add</button></div>
+            </li>
+
+            <li class="menu-item" data-id="croaker" data-cat="Grill" data-name="Grilled croaker" data-price="7000">
+              <img class="m-thumb" src="images/croaker.jpg" alt="" width="88" height="88">
+              <div class="m-info"><h3>Grilled croaker</h3><p>Whole fish marinated overnight, grilled over charcoal.</p></div>
+              <span class="leader" aria-hidden="true"></span>
+              <span class="m-price">₦7,000</span>
+              <div class="m-action"><button class="btn btn-add" type="button" aria-label="Add Grilled croaker to your order">Add</button></div>
+            </li>
+
+            <li class="menu-item" data-id="goat-pepper-soup" data-cat="Soups and swallow" data-name="Goat pepper soup" data-price="4000">
+              <img class="m-thumb" src="images/goat-pepper-soup.jpg" alt="" width="88" height="88">
+              <div class="m-info"><h3>Goat pepper soup</h3><p>Clear, peppery broth with tender goat meat.</p></div>
+              <span class="leader" aria-hidden="true"></span>
+              <span class="m-price">₦4,000</span>
+              <div class="m-action"><button class="btn btn-add" type="button" aria-label="Add Goat pepper soup to your order">Add</button></div>
+            </li>
+
+            <li class="menu-item" data-id="catfish-pepper-soup" data-cat="Soups and swallow" data-name="Catfish pepper soup" data-price="6500">
+              <img class="m-thumb" src="images/catfish-pepper-soup.jpg" alt="" width="88" height="88">
+              <div class="m-info"><h3>Catfish pepper soup</h3><p>Fresh catfish in a hot, scented broth.</p></div>
+              <span class="leader" aria-hidden="true"></span>
+              <span class="m-price">₦6,500</span>
+              <div class="m-action"><button class="btn btn-add" type="button" aria-label="Add Catfish pepper soup to your order">Add</button></div>
+            </li>
+
+            <li class="menu-item" data-id="egusi" data-cat="Soups and swallow" data-name="Egusi and pounded yam" data-price="4500">
+              <img class="m-thumb" src="images/egusi.jpg" alt="" width="88" height="88">
+              <div class="m-info"><h3>Egusi and pounded yam</h3><p>Melon seed soup with assorted meat and stockfish.</p></div>
+              <span class="leader" aria-hidden="true"></span>
+              <span class="m-price">₦4,500</span>
+              <div class="m-action"><button class="btn btn-add" type="button" aria-label="Add Egusi and ppounded yam to your order">Add</button></div>
+            </li>
+
+            <li class="menu-item" data-id="moi-moi" data-cat="Sides and drinks" data-name="Moi moi" data-price="1000">
+              <img class="m-thumb" src="images/moi-moi.jpg" alt="" width="88" height="88">
+              <div class="m-info"><h3>Moi moi</h3><p>Steamed bean pudding with egg and fish.</p></div>
+              <span class="leader" aria-hidden="true"></span>
+              <span class="m-price">₦1,000</span>
+              <div class="m-action"><button class="btn btn-add" type="button" aria-label="Add Moi moi to your order">Add</button></div>
+            </li>
+
+            <li class="menu-item" data-id="dodo" data-cat="Sides and drinks" data-name="Fried plantain (dodo)" data-price="1200">
+              <img class="m-thumb" src="images/dodo.jpg" alt="" width="88" height="88">
+              <div class="m-info"><h3>Fried plantain (dodo)</h3><p>Sweet, ripe plantain fried until caramelised.</p></div>
+              <span class="leader" aria-hidden="true"></span>
+              <span class="m-price">₦1,200</span>
+              <div class="m-action"><button class="btn btn-add" type="button" aria-label="Add Fried plantain (dodo) to your order">Add</button></div>
+            </li>
+
+            <li class="menu-item" data-id="zobo" data-cat="Sides and drinks" data-name="Zobo" data-price="1000">
+              <img class="m-thumb" src="images/zobo.jpg" alt="" width="88" height="88">
+              <div class="m-info"><h3>Zobo</h3><p>Chilled hibiscus drink with ginger and pineapple.</p></div>
+              <span class="leader" aria-hidden="true"></span>
+              <span class="m-price">₦1,000</span>
+              <div class="m-action"><button class="btn btn-add" type="button" aria-label="Add Zobo to your order">Add</button></div>
+            </li>
+
+            <li class="menu-item" data-id="chapman" data-cat="Sides and drinks" data-name="Chapman" data-price="2000">
+              <img class="m-thumb" src="images/chapman.jpg" alt="" width="88" height="88">
+              <div class="m-info"><h3>Chapman</h3><p>Fruity, fizzy and served over ice.</p></div>
+              <span class="leader" aria-hidden="true"></span>
+              <span class="m-price">₦2,000</span>
+              <div class="m-action"><button class="btn btn-add" type="button" aria-label="Add Chapman to your order">Add</button></div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="gallery" id="gallery" aria-labelledby="gallery-title">
+        <div class="wrap">
+          <h2 id="gallery-title">From the grill</h2>
+          <div class="gallery-grid">
+            <figure class="g-wide" data-optional>
+              <img src="images/gallery-1.jpg" alt="Beef suya cooking over hot charcoal" width="1200" height="800" loading="lazy">
+              <figcaption>Suya, rubbed in yaji and grilled over charcoal.</figcaption>
+            </figure>
+            <figure data-optional>
+              <img src="images/gallery-2.jpg" alt="A plate of party jollof rice with grilled chicken" width="800" height="800" loading="lazy">
+              <figcaption>Party jollof, slow-cooked until it smokes.</figcaption>
+            </figure>
+            <figure data-optional>
+              <img src="images/gallery-3.jpg" alt="A steaming bowl of goat pepper soup" width="800" height="800" loading="lazy">
+              <figcaption>Pepper soup, made fresh to order.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="visit" id="visit" aria-labelledby="visit-title">
+        <div class="wrap visit-grid">
+          <div>
+            <h2 id="visit-title">Come hungry</h2>
+            <address>
+              12 Adeniyi Street<br>
+              Yaba, Lagos
+            </address>
+            <a class="btn btn-ghost-dark" href="https://www.google.com/maps/search/?api=1&amp;query=Yaba%20Lagos" target="_blank" rel="noopener">Get directions</a>
+          </div>
+          <table class="hours">
+            <caption class="sr-only">Opening hours</caption>
+            <tbody>
+              <tr><th scope="row">Monday to Friday</th><td>11am to 10pm</td></tr>
+              <tr><th scope="row">Saturday</th><td>11am to 11pm</td></tr>
+              <tr><th scope="row">Sunday</th><td>12pm to 9pm</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Ember &amp; Pepper is a sample project. Website design and development by Chibuike.</p>
+    </footer>
+
+    <button class="order-bar" id="order-bar" type="button" hidden aria-haspopup="dialog">
+      <span id="order-bar-text">0 items</span>
+      <span class="order-bar-cta">View order</span>
+    </button>
+
+    <dialog id="order-dialog" aria-labelledby="order-title">
+      <div class="sheet">
+        <div class="sheet-head">
+          <h2 id="order-title">Your order</h2>
+          <button class="btn btn-small btn-ghost-dark" id="close-order" type="button">Close</button>
+        </div>
+
+        <div id="cart" aria-live="polite"></div>
+
+        <form id="order-form" novalidate>
+          <div class="field">
+            <label for="name">Your name</label>
+            <input id="name" name="name" type="text" autocomplete="name" required>
+            <p class="error" id="name-error" hidden>Enter your name so that we can call it out.</p>
+          </div>
+
+          <fieldset class="field">
+            <legend>How do you want it?</legend>
+            <label class="choice"><input type="radio" name="mode" value="pickup" checked>Pickup</label>
+            <label class="choice"><input type="radio" name="mode" value="delivery">Delivery</label>
+          </fieldset>
+
+          <div class="field" id="address-field" hidden>
+            <label for="address">Delivery address</label>
+            <input id="address" name="address" type="text" autocomplete="street-address">
+            <p class="error" id="address-error" hidden>Enter the address we should deliver to.</p>
+          </div>
+
+          <div class="field">
+            <label for="note">Anything we should know? (optional)</label>
+            <textarea name="note" id="note" rows="3" placeholder="Extra pepper, no onion, allergies..."></textarea>
+          </div>
+
+          <a class="btn btn-wide" id="send-btn" href="#" target="_blank" rel="noopener">Send order on WhatsApp</a>
+          <p class="sent" id="sent" role="status" hidden>WhatsApp should now be open with your order. Tap send there to confirm it.</p>
+          <p class="fine">Payment is made when you pick up or when the rider arrives.</p>
+        </form>
+      </div>
+    </dialog>
+
+    <script src="script.js"></script>
+  </body>
+</html>
